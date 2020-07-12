@@ -9,14 +9,6 @@ const schema = new db.Schema({
     trim: true,
     maxlength: 100
   },
-  username: {
-    type: String,
-    required: [true, 'Missing username field'],
-    trim: true,
-    minlength: 4,
-    maxlength: 20,
-    unique: true
-  },
   email: {
     type: String,
     required: [true, 'Missing email field'],

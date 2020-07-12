@@ -6,7 +6,7 @@ exports.getUsers = catchAsync(async (req, res, next) => {
 
   const users = await new QueryBuilder(User)
                       .filter()
-                      .select('name username email role createdAt')
+                      .select('name email role createdAt')
                       .paginate(extraQuery)
                       .get();
 

@@ -7,11 +7,7 @@ const router = express.Router();
 
 router.route('/register')
   	.post(
-	  Request.filterBody(
-		  'name', 'username', 
-		  'email', 'password', 
-		  'passwordConfirm'
-		),
+	  Request.filterBody('name', 'email', 'password', 'passwordConfirm'),
 	  AuthController.register
 	);
 

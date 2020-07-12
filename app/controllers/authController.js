@@ -8,8 +8,7 @@ const mailer = require('./../utils/mailer');
 exports.register = catchAsync(async (req, res, next) => {
   const { 
     _id, name, 
-    username, email, 
-    role, createdAt 
+    email, role, createdAt 
   } = await User.create(req.filteredBody);
 
   const token = await promisify(jwt.sign)(
@@ -26,8 +25,7 @@ exports.register = catchAsync(async (req, res, next) => {
             token,
             user: {
               _id, name, 
-              username, email, 
-              role, createdAt 
+              email, role, createdAt 
             }
           }
         });
